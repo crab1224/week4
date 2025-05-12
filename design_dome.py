@@ -26,6 +26,8 @@ while(1):
         if d == 0:
             print('0이 아닌 수를 입력해 주세요')
             continue
+        if d == '':
+            d = 10
         diameter = float(d)
         break
     while(1):
@@ -35,12 +37,18 @@ while(1):
         if m in item:
             material = m
             break
+        if m == '':
+            material = '유리'
+            break
         else:
             print("다시 입력해 주세요")
     while(1):
         t = input('두께를 입력해 주세요:')
         if t.lower() == 'exit':
             exit()
+        elif t == '':
+            thickness = float(1)
+            break
         try:
             thickness = float(t)
             break
